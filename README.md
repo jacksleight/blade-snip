@@ -50,3 +50,7 @@ Run the following command from your project root:
 ```bash
 composer require jacksleight/laravel-blade-snipit
 ```
+
+## Usage
+
+Check the examples above. All variables defined in the template scope are also avaliable in the partials.
