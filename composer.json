@@ -1,0 +1,19 @@
+{
+    "name": "jacksleight/laravel-blade-snipit",
+    "autoload": {
+        "psr-4": {
+            "JackSleight\\LaravelBladeSnipit\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JackSleight\\LaravelBladeSnipit\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.4|^8.0|^8.1",
+        "laravel/framework": "^8.0|^9.0"
+    }
+}
