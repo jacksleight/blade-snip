@@ -12,7 +12,7 @@ class ServiceProvider extends LaravelServiceProvider
         Blade::directive('snip', function ($expression) {
             eval('$args = ['.$expression.'];');
 
-            return '<?php $snip_'.$args[0].' = function($__data) { extract($__data); ?>';
+            return '<?php $__snipit_'.$args[0].' = function($__data) { extract($__data); ?>';
         });
         Blade::directive('endsnip', function () {
             return '<?php }; ?>';
@@ -20,7 +20,7 @@ class ServiceProvider extends LaravelServiceProvider
         Blade::directive('snipit', function ($expression) {
             eval('$args = ['.$expression.'];');
 
-            return '<?php $snip_'.$args[0].'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]) + '.var_export($args[1] ?? [], true).') ?>';
+            return '<?php $__snipit_'.$args[0].'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]) + '.var_export($args[1] ?? [], true).') ?>';
         });
     }
 }
