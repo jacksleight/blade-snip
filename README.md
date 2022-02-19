@@ -37,7 +37,7 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
 @endif
 ```
 
-## Why?
+## Why?
 
 I created this to use when prototyping page layouts. I often need reusable blocks but don’t want to jump between multiple files, or don’t know exactly how those files should be structured yet.
 
