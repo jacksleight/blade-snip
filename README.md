@@ -41,7 +41,7 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
 
 I created this to use when prototyping page layouts. I often need reusable blocks but don’t want to jump between multiple files, or don’t know exactly how those files should be structured yet.
 
-This is primarily intended as a development tool, it’s usually best to break things down into actual partials or components once you’re done prototyping. That being said, there could be other use-cases.
+This is primarily intended as a development tool, it’s usually best to break things down into actual partials or components once you’re done prototyping. That being said, there could be other use cases.
 
 ## Installation
 
