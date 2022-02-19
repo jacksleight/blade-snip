@@ -14,7 +14,7 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
             @endif
             <h1>Lorem Ipsum Dolor</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            £{{ number_format($price ?? rand(10, 100)) }}
+            <span>£{{ number_format($price ?? rand(10, 100)) }}</span>
             <button>Add to Basket</button>
         </div>
     @endsnip
