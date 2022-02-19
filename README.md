@@ -24,16 +24,15 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
 ```
 
 ```blade
-@snip('card')
-    <x-card title="Lorem Ipsum">
-        <img src="placeholder.jpg">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </x-card>
+@snip('content')
+    <x-figure caption="Lorem ipsum dolor sit amet">
+        <img src="photo.jpg">
+    </x-figure>
 @endsnip
 @if ($link)
-    <a href="{{ $link }}">@snipit('card')</a>
+    <a href="{{ $link }}">@snipit('content')</a>
 @else
-    @snipit('card')
+    @snipit('content')
 @endif
 ```
 
