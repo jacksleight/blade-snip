@@ -25,7 +25,7 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
 
 ```blade
 @snip('content')
-    <x-figure caption="Lorem ipsum dolor sit amet consectetur adipisicing elit">
+    <x-figure caption="Lorem ipsum dolor sit amet">
         <img src="photo.jpg">
     </x-figure>
 @endsnip
