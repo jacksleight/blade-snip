@@ -3,7 +3,7 @@
 
 # Blade Snipit 
 
-Blade Snipit allows you to use parts of a blade template multiple times and in multiple places. Basically inline partials:
+Blade Snipit allows you to use parts of a blade template multiple times and in multiple places in the same file. Basically inline partials:
 
 ```blade
 <div class="products">
