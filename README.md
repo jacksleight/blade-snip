@@ -21,7 +21,9 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
     @snipit('product', ['image' => 'cheese.jpg'])
     @snipit('product', ['image' => 'pasta.jpg', 'price' => 120])
 </div>
+```
 
+```blade
 @snip('card')
     <x-card title="Lorem Ipsum">
         <img src="placeholder.jpg">
