@@ -3,7 +3,7 @@
 
 # Blade Snip
 
-Blade Snip allows you to extract and reuse parts of a blade template in a single file. Snips are basically inline partials:
+Blade Snip allows you to extract and reuse parts of a blade template within a single file. Snips are basically inline partials:
 
 ```blade
 <div class="products">
