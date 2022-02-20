@@ -43,8 +43,6 @@ I created this to use when prototyping page layouts. It's useful to have reusabl
 
 This is primarily intended as a development tool, it’s usually best to break things down into actual partials or components once you’re done prototyping. That being said, there could be other use cases.
 
-If you find this useful I'd love to hear about it.
-
 ## Installation
 
 Run the following command from your project root:
