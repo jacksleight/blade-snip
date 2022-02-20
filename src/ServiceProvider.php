@@ -1,6 +1,6 @@
 <?php
 
-namespace JackSleight\LaravelBladeSnipit;
+namespace JackSleight\LaravelBladeSnip;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
@@ -13,16 +13,16 @@ class ServiceProvider extends LaravelServiceProvider
             $name = $expression;
             $name = trim($name, '\'" ');
 
-            return '<?php $__snipit_'.$name.' = function($__data) { extract($__data); ?>';
+            return '<?php $__snip_'.$name.' = function($__data) { extract($__data); ?>';
         });
         Blade::directive('endsnip', function () {
             return '<?php }; ?>';
         });
-        Blade::directive('snipit', function ($expression) {
+        Blade::directive('stick', function ($expression) {
             list($name, $data) = explode(',', $expression, 2) + [null, '[]'];
             $name = trim($name, '\'" ');
 
-            return '<?php $__snipit_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]) + '.$data.') ?>';
+            return '<?php $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]) + '.$data.') ?>';
         });
     }
 }

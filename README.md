@@ -1,9 +1,9 @@
-![Packagist version](https://flat.badgen.net/packagist/v/jacksleight/laravel-blade-snipit)
-![License](https://flat.badgen.net/github/license/jacksleight/laravel-blade-snipit)
+![Packagist version](https://flat.badgen.net/packagist/v/jacksleight/laravel-blade-snip)
+![License](https://flat.badgen.net/github/license/jacksleight/laravel-blade-snip)
 
-# Blade Snipit 
+# Blade Snip
 
-Blade Snipit allows you to use parts of a blade template multiple times and in multiple places in the same file. Basically inline partials:
+Blade Snip allows you to extract and reuse parts of a blade template in a single file. Snips are basically inline partials:
 
 ```blade
 <div class="products">
@@ -18,9 +18,9 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
             <button>Add to Basket</button>
         </div>
     @endsnip
-    @snipit('product', ['image' => 'potato.jpg'])
-    @snipit('product', ['image' => 'cheese.jpg'])
-    @snipit('product', ['image' => 'pasta.jpg', 'price' => 120])
+    @stick('product', ['image' => 'potato.jpg'])
+    @stick('product', ['image' => 'cheese.jpg'])
+    @stick('product', ['image' => 'pasta.jpg', 'price' => 120])
 </div>
 ```
 
@@ -31,9 +31,9 @@ Blade Snipit allows you to use parts of a blade template multiple times and in m
     </x-figure>
 @endsnip
 @if ($link)
-    <a href="{{ $link }}">@snipit('content')</a>
+    <a href="{{ $link }}">@stick('content')</a>
 @else
-    @snipit('content')
+    @stick('content')
 @endif
 ```
 
@@ -48,9 +48,11 @@ This is primarily intended as a development tool, it’s usually best to break t
 Run the following command from your project root:
 
 ```bash
-composer require jacksleight/laravel-blade-snipit
+composer require jacksleight/laravel-blade-snip
 ```
 
 ## Usage
 
-Check the examples above. All variables defined in the template scope are also avaliable in the partials.
+Check the examples above.
+
+Snips have their own variable scope, but variables defined in the template are also included.
