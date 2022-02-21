@@ -55,6 +55,5 @@ composer require jacksleight/laravel-blade-snip
 
 Check the examples above.
 
-Snips have their own variable scope, but variables defined in the template are included.
+Under the hood these are just closures. They have their own variable scope but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
 
-Snip names can only contain alpha-numeric characters and underscores.
