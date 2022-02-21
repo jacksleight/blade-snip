@@ -13,7 +13,7 @@ class ServiceProvider extends LaravelServiceProvider
             list($name, $defaults) = explode(',', $expression, 2) + [null, '[]'];
             $name = trim($name, '\'" ');
 
-            return '<?php $__snip_'.$name.' = function($__parent, $__data) { extract(array_merge($__parent, '.$defaults.', $__data)); ?>';
+            return '<?php $__snip_'.$name.' = function ($__parent, $__data) { extract(array_merge($__parent, '.$defaults.', $__data)); ?>';
         });
         Blade::directive('endsnip', function () {
             return '<?php }; ?>';
