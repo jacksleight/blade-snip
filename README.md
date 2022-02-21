@@ -17,7 +17,7 @@ Blade Snip lets you use parts of a single blade template multiple times. Basical
             <button>Add to Basket</button> £{{ number_format($price) }}
         </div>
     @endsnip
-    @stick('product', ['image' => 'potato.jpg'])
+    @stick('product')
     @stick('product', ['image' => 'cheese.jpg'])
     @stick('product', ['image' => 'pasta.jpg', 'price' => 120])
 </div>
