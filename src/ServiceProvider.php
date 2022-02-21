@@ -10,10 +10,10 @@ class ServiceProvider extends LaravelServiceProvider
     public function boot()
     {
         Blade::directive('snip', function ($expression) {
-            $name = $expression;
+            list($name, $defaults) = explode(',', $expression, 2) + [null, '[]'];
             $name = trim($name, '\'" ');
 
-            return '<?php $__snip_'.$name.' = function($__data) { extract($__data); ?>';
+            return '<?php $__snip_'.$name.' = function($__parent, $__data) { extract(array_merge($__parent, '.$defaults.', $__data)); ?>';
         });
         Blade::directive('endsnip', function () {
             return '<?php }; ?>';
@@ -22,7 +22,7 @@ class ServiceProvider extends LaravelServiceProvider
             list($name, $data) = explode(',', $expression, 2) + [null, '[]'];
             $name = trim($name, '\'" ');
 
-            return '<?php $__snip_'.$name.'(array_merge(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]),'.$data.')) ?>';
+            return '<?php $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]), '.$data.') ?>';
         });
     }
 }
