@@ -56,8 +56,7 @@ Check the examples above.
 
 Directives accept the following arguments:
 
-* `@snip(string $name, ?array $defaults = [])`
-* `@endsnip`
+* `@snip(string $name, ?array $defaults = [])`/`@endsnip`
 * `@stick(string $name, ?array $data = [])`
 
 Under the hood the `@snip`/`@endsnip` directives just wrap that code in a closure, and `@stick` calls it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
