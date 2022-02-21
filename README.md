@@ -7,15 +7,14 @@ Blade Snip lets you use parts of a single blade template multiple times. Basical
 
 ```blade
 <div class="products">
-    @snip('product')
+    @snip('product', ['price' => rand(10, 100)])
         <div class="product">
             @if ($image)
                 <img src="{{ $image }}">
             @endif
-            <h1>Lorem Ipsum Dolor</h1>
+            <h1>Lorem Ipsum Dolor echo</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <span>£{{ number_format($price ?? rand(10, 100)) }}</span>
-            <button>Add to Basket</button>
+            <button>Add to Basket</button> £{{ number_format($price) }}
         </div>
     @endsnip
     @stick('product', ['image' => 'potato.jpg'])
@@ -55,5 +54,10 @@ composer require jacksleight/laravel-blade-snip
 
 Check the examples above.
 
-Under the hood the `@snip`/`@endsnip` directives just wrap that code in a closure, and `@stick` calls it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
+Directives accept the following arguments:
 
+* `@snip(string $name, ?array $defaults = [])`
+* `@endsnip`
+* `@stick(string $name, ?array $data = [])`
+
+Under the hood the `@snip`/`@endsnip` directives just wrap that code in a closure, and `@stick` calls it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
