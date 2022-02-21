@@ -22,7 +22,7 @@ class ServiceProvider extends LaravelServiceProvider
             list($name, $data) = explode(',', $expression, 2) + [null, '[]'];
             $name = trim($name, '\'" ');
 
-            return '<?php $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__data"]), '.$data.') ?>';
+            return '<?php $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data"]), '.$data.') ?>';
         });
     }
 }
