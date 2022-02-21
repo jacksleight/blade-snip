@@ -55,5 +55,5 @@ composer require jacksleight/laravel-blade-snip
 
 Check the examples above.
 
-Under the hood the `@snip` directive just wraps the compiled Blade in a closure, and `@stick` calls it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
+Under the hood the `@snip`/`@endsnip` directives just wrap that code in a closure, and `@stick` calls it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
 
