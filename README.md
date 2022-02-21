@@ -56,3 +56,5 @@ composer require jacksleight/laravel-blade-snip
 Check the examples above.
 
 Snips have their own variable scope, but variables defined in the template are included.
+
+Snip names can only contain alpha-numeric characters and underscores.
