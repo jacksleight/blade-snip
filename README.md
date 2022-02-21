@@ -55,4 +55,4 @@ composer require jacksleight/laravel-blade-snip
 
 Check the examples above.
 
-Snips have their own variable scope, but variables defined in the template are included.
+Internally Snips are just closures. They have their own variable scope, but variables defined in the template are included.
