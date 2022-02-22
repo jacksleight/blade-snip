@@ -3,21 +3,21 @@
 
 # Blade Snip
 
-Blade Snip lets you use parts of a single blade template multiple times. Basically partials, but inline:
+Blade Snip allows you to use parts of a blade template multiple times. Basically partials, but inline:
 
 ```blade
 <div class="products">
-    @snip('product', ['price' => rand(10, 100)])
+    @snip('product')
         <div class="product">
             @if ($image)
                 <img src="{{ $image }}">
             @endif
             <h1>Lorem Ipsum Dolor echo</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button>Add to Basket</button> £{{ number_format($price) }}
+            <p>£{{ number_format($price ?? rand(10, 100)) }}</p>
+            <button>Add to Basket</button>
         </div>
     @endsnip
-    @stick('product')
+    @stick('product', ['image' => 'potato.jpg'])
     @stick('product', ['image' => 'cheese.jpg'])
     @stick('product', ['image' => 'pasta.jpg', 'price' => 120])
 </div>
