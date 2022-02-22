@@ -18,11 +18,23 @@ class ServiceProvider extends LaravelServiceProvider
         Blade::directive('endsnip', function () {
             return '<?php }; ?>';
         });
+
         Blade::directive('stick', function ($expression) {
             list($name, $data) = explode(',', $expression, 2) + [null, '[]'];
             $name = trim($name, '\'" ');
 
-            return '<?php $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data"]), '.$data.') ?>';
+            return '<?php $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data"]), '.$data.'); ?>';
+        });
+
+        Blade::directive('spread', function ($expression) {
+            list($name, $data) = explode(',', $expression, 2) + [null, '[]'];
+            $name = trim($name, '\'" ');
+
+            if (is_numeric($data)) {
+                return '<?php for ($__i=0; $__i < '.$data.'; $__i++) { $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data", "__i"]), []); } ?>';
+            } else {
+                return '<?php foreach ('.$data.' as $__item) { $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data", "__item"]), $__item); } ?>';
+            }
         });
     }
 }
