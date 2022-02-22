@@ -60,4 +60,4 @@ Directives accept the following arguments:
 * `@stick(string $name, ?array $data = [])`
 * `@spread(string $name, int $count || array $datas)`
 
-Under the hood the `@snip` and `@endsnip` directives just wrap that code in a closure, and `@stick` calls it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
+Under the hood the `@snip` and `@endsnip` directives just wrap that code in a closure, then `@stick` and `@spread` call it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
