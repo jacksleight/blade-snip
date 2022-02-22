@@ -7,7 +7,7 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
 
 ```blade
 <div class="products">
-    @snip('product')
+    @snip('product', ['image' => null])
         <div class="product">
             @if ($image)
                 <img src="{{ $image }}">
@@ -17,9 +17,9 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
             <button>Add to Basket</button>
         </div>
     @endsnip
-    @stick('product', ['image' => 'potato.jpg'])
+    @stick('product')
     @stick('product', ['image' => 'cheese.jpg'])
-    @stick('product', ['image' => 'pasta.jpg', 'price' => 120])
+    @stick('product', ['image' => 'potato.jpg', 'price' => 120])
 </div>
 ```
 
