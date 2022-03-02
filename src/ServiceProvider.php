@@ -1,6 +1,6 @@
 <?php
 
-namespace JackSleight\LaravelBladeSnip;
+namespace JackSleight\BladeSnip;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
@@ -31,9 +31,9 @@ class ServiceProvider extends LaravelServiceProvider
             $name = trim($name, '\'" ');
 
             if (is_numeric($data)) {
-                return '<?php for ($__i=0; $__i < '.$data.'; $__i++) { $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data", "__i"]), []); } ?>';
+                return '<?php for ($index=0; $index < '.$data.'; $index++) { $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data"]), []); } ?>';
             } else {
-                return '<?php foreach ('.$data.' as $__item) { $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data", "__item"]), $__item); } ?>';
+                return '<?php foreach ('.$data.' as $index => $__item) { $__snip_'.$name.'(\Illuminate\Support\Arr::except(get_defined_vars(), ["__parent", "__data", "__item"]), $__item); } ?>';
             }
         });
     }
