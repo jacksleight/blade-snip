@@ -57,7 +57,11 @@ Check the examples above.
 Directives accept the following arguments:
 
 * `@snip(string $name, ?array $defaults = [])` … `@endsnip`
+    * Defines a new snip
 * `@stick(string $name, ?array $data = [])`
+    * Includes a snip
 * `@spread(string $name, int $count || array $datas)`
+    * Includes a snip multple times
+    * Also adds an `$index` variable to each iteration
 
 Under the hood the `@snip` and `@endsnip` directives just wrap that code in a closure, then `@stick` and `@spread` call it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
