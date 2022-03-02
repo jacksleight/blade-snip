@@ -1,5 +1,5 @@
-![Packagist version](https://flat.badgen.net/packagist/v/jacksleight/laravel-blade-snip)
-![License](https://flat.badgen.net/github/license/jacksleight/laravel-blade-snip)
+![Packagist version](https://flat.badgen.net/packagist/v/jacksleight/blade-snip)
+![License](https://flat.badgen.net/github/license/jacksleight/blade-snip)
 
 # Blade Snip
 
@@ -47,7 +47,7 @@ This is primarily intended as a development tool, it’s usually best to break t
 Run the following command from your project root:
 
 ```bash
-composer require jacksleight/laravel-blade-snip
+composer require jacksleight/blade-snip
 ```
 
 ## Usage

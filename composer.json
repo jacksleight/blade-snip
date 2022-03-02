@@ -1,14 +1,14 @@
 {
-    "name": "jacksleight/laravel-blade-snip",
+    "name": "jacksleight/blade-snip",
     "autoload": {
         "psr-4": {
-            "JackSleight\\LaravelBladeSnip\\": "src"
+            "JackSleight\\BladeSnip\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "JackSleight\\LaravelBladeSnip\\ServiceProvider"
+                "JackSleight\\BladeSnip\\ServiceProvider"
             ]
         }
     },
