@@ -38,7 +38,7 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
 
 ```blade
 @snip('complex_thing')
-    {{-- ... --}}
+    ...
 @endsnip
 <div class="mobile">
     <h2>{{ $name }}</div>
