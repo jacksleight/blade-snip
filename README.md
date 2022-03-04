@@ -12,7 +12,7 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
             @if ($image)
                 <img src="{{ $image }}">
             @endif
-            <h1>Lorem Ipsum Dolor echo</h1>
+            <h1>Lorem Ipsum Dolor</h1>
             <p>£{{ number_format($price ?? rand(10, 100)) }}</p>
             <button>Add to Basket</button>
         </div>
