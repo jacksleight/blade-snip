@@ -36,6 +36,24 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
 @endif
 ```
 
+```
+@snip('complicated_thing')
+    {{-- ... --}}
+@endsnip
+<div class="mobile">
+    <h2>{{ $name }}</div>
+    <p>{{ $location }}</div>
+    <div>@stick('complicated_thing')</div>    
+</div>
+<table class="desktop">
+    <tr>
+        <th>{{ $name }}</td>
+        <td>{{ $location }}</td>
+        <td>@stick('complicated_thing')</td>
+    </tr>
+</table>
+```
+
 ## Why?
 
 I created this to use when prototyping page layouts. It's useful to have reusable blocks, but I don’t want to jump between multiple files, or don’t know exactly how those files should be structured yet.
