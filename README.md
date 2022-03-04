@@ -20,6 +20,8 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
     @stick('product')
     @stick('product', ['image' => 'cheese.jpg'])
     @stick('product', ['image' => 'potato.jpg', 'price' => 120])
+    {{-- or --}}
+    @spread('product', 3)
 </div>
 ```
 
@@ -79,7 +81,7 @@ Directives accept the following arguments:
 * `@stick(string $name, ?array $data = [])`
     * Includes a snip
 * `@spread(string $name, int $count || array $datas)`
-    * Includes a snip multple times
+    * Includes a snip multiple times
     * Also adds an `$index` variable to each iteration
 
 Under the hood the `@snip` and `@endsnip` directives just wrap that code in a closure, then `@stick` and `@spread` call it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
