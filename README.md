@@ -37,19 +37,19 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
 ```
 
 ```blade
-@snip('complicated_thing')
+@snip('complex_thing')
     {{-- ... --}}
 @endsnip
 <div class="mobile">
     <h2>{{ $name }}</div>
     <p>{{ $location }}</div>
-    <div>@stick('complicated_thing')</div>    
+    <div>@stick('complex_thing')</div>    
 </div>
 <table class="desktop">
     <tr>
         <th>{{ $name }}</td>
         <td>{{ $location }}</td>
-        <td>@stick('complicated_thing')</td>
+        <td>@stick('complex_thing')</td>
     </tr>
 </table>
 ```
