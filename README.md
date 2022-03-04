@@ -36,7 +36,7 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
 @endif
 ```
 
-```
+```blade
 @snip('complicated_thing')
     {{-- ... --}}
 @endsnip
