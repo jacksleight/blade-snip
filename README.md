@@ -20,6 +20,8 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
     @stick('product')
     @stick('product', ['image' => 'cheese.jpg'])
     @stick('product', ['image' => 'potato.jpg', 'price' => 120])
+    {{-- or --}}
+    @spread('product', 3)
 </div>
 ```
 
@@ -58,7 +60,7 @@ Blade Snip allows you to use parts of a blade template multiple times. Basically
 
 I created this to use when prototyping page layouts. It's useful to have reusable blocks, but I don’t want to jump between multiple files, or don’t know exactly how those files should be structured yet.
 
-This is primarily intended as a development tool, it’s usually best to break things down into actual partials or components once you’re done prototyping. That being said, there could be other use cases.
+This was primarily intended as a development tool, it’s usually best to break things down into actual partials or components once you’re done prototyping. That being said, there are other potential use cases.
 
 ## Installation
 
@@ -79,7 +81,7 @@ Directives accept the following arguments:
 * `@stick(string $name, ?array $data = [])`
     * Includes a snip
 * `@spread(string $name, int $count || array $datas)`
-    * Includes a snip multple times
+    * Includes a snip multiple times
     * Also adds an `$index` variable to each iteration
 
 Under the hood the `@snip` and `@endsnip` directives just wrap that code in a closure, then `@stick` and `@spread` call it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
