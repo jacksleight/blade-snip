@@ -85,3 +85,7 @@ Directives accept the following arguments:
     * Also adds an `$index` variable to each iteration
 
 Under the hood the `@snip` and `@endsnip` directives just wrap that code in a closure, then `@stick` and `@spread` call it. As they're closures they have their own variable scope, but variables defined in the template are included. Names can only contain alpha-numeric characters and underscores.
+
+## Sponsoring 
+
+This package is completely free to use. However fixing bugs, adding features and helping users takes time and effort. If you find this addon useful and would like to support its development any [contribution](https://github.com/sponsors/jacksleight) would be greatly appreciated. Thanks! 🙂
